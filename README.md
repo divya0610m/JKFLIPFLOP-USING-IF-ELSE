@@ -54,15 +54,23 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 **PROGRAM**
 
 module ex7(J,K,clk,q,qbar);
+
 input J, K, clk;
+
 output reg q;
+
 output qbar;
 
 always @(posedge (clk))
+
 begin
+
    q <= ((J&(~q))|((~K)&q));
+   
 end
+
 assign qbar=(~q);
+
 endmodule
 
 **RTL LOGIC FOR FLIPFLOPS**
